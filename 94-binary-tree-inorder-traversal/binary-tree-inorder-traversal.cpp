@@ -15,7 +15,7 @@ public:
         stack<TreeNode*> st;
         TreeNode* node=root;
         vector<int> inorder;
-        while(true){
+        while(root){
             if(node!=NULL){
                 st.push(node);
                 node=node->left;
