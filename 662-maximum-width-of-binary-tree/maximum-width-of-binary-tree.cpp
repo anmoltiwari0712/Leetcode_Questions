@@ -28,15 +28,15 @@ public:
             for(int i=0;i<level_size;i++){
                 auto node_index_pair=q.front();
                 TreeNode* node=node_index_pair.first;
-                int node_index=node_index_pair.second-start_index;
+                long long node_index=node_index_pair.second-start_index;
 
                 q.pop();
 
                 if(node->left!=NULL){
-                    q.push({node->left,2LL*node_index+1});
+                    q.push({node->left,2*node_index+1});
                 }
                 if(node->right!=NULL){
-                    q.push({node->right,2LL*node_index+2});
+                    q.push({node->right,2*node_index+2});
                 }
             }   
         }
