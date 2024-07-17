@@ -15,12 +15,18 @@ public:
         if(root==NULL){
             return true;
         }
-        if(root->val<=min || root->val>=max){
+        // if(root->val<=min || root->val>=max){
+        //     return false;
+        // }
+        if(root->val>min && root->val<max){
+            bool left=isBst(root->left,min,root->val);
+            bool right=isBst(root->right,root->val,max);
+            return  left && right;
+        }
+        else{
             return false;
         }
-        bool left=isBst(root->left,min,root->val);
-        bool right=isBst(root->right,root->val,max);
-        return  left && right;
+       
     }
     bool isValidBST(TreeNode* root) {
         return isBst(root, LONG_MIN, LONG_MAX);
