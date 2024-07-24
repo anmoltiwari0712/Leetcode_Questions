@@ -12,7 +12,7 @@ public:
                 }
                 char ch=st.top();
                 st.pop();
-                if((it == ')' and ch == '(') or  (it == ']' and ch == '[') or (it == '}' and ch == '{')){
+                if((it==')' && ch=='(') || (it=='}' && ch=='{') || (it==']' && ch=='[')){
                     continue;
                 }
                 else{
